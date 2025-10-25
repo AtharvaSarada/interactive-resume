@@ -7,9 +7,9 @@ export const PERSONAL_INFO = {
   title: "Web Developer and AI Generalist",
   location: "Sangli, Maharashtra, India",
   phone: "9022664540",
-  email: "atharva.sarada@example.com", // Update with your actual email
-  linkedin: "https://www.linkedin.com/in/atharva-sarada", // Update with your actual LinkedIn
-  github: "https://github.com/atharva-sarada", // Update with your actual GitHub
+  email: "your.email@example.com",
+  linkedin: "https://www.linkedin.com/in/atharva-sarada-ak47/",
+  github: "https://github.com/AtharvaSarada",
 };
 
 export const ROTATING_TITLES = [
@@ -29,23 +29,23 @@ export const STATISTICS = [
   {
     value: "2+",
     label: "Years Experience",
-    icon: "calendar"
+    icon: "calendar",
   },
   {
     value: "10+",
     label: "Projects Completed",
-    icon: "briefcase"
+    icon: "briefcase",
   },
   {
     value: "25+",
     label: "Technologies",
-    icon: "code"
+    icon: "code",
   },
   {
     value: "4",
     label: "Certifications",
-    icon: "award"
-  }
+    icon: "award",
+  },
 ];
 
 // ============================================
@@ -74,7 +74,7 @@ export const SKILLS = {
     { name: "RESTful APIs", proficiency: 90, icon: "🔌" },
     { name: "Next.js", proficiency: 70, icon: "▲" },
   ],
-  "Databases": [
+  Databases: [
     { name: "MongoDB", proficiency: 85, icon: "🍃" },
     { name: "MySQL", proficiency: 80, icon: "🐬" },
     { name: "Firebase", proficiency: 70, icon: "🔥" },
@@ -110,12 +110,13 @@ export const EDUCATION = [
     type: "Exchange Semester",
     duration: "March 2024 - August 2024",
     location: "Germany",
-    description: "International exchange program focused on advanced computer science topics and cultural immersion.",
+    description:
+      "International exchange program focused on advanced computer science topics and cultural immersion.",
     highlights: [
       "International exposure",
       "Advanced CS curriculum",
-      "Cross-cultural collaboration"
-    ]
+      "Cross-cultural collaboration",
+    ],
   },
   {
     id: 2,
@@ -125,13 +126,14 @@ export const EDUCATION = [
     duration: "November 2021 – June 2025",
     location: "Ichalkaranji, India",
     cgpa: "8.03/10",
-    description: "Comprehensive computer science education with focus on software development and emerging technologies.",
+    description:
+      "Comprehensive computer science education with focus on software development and emerging technologies.",
     highlights: [
       "Strong academic performance",
       "Multiple projects completed",
-      "Active in technical clubs"
-    ]
-  }
+      "Active in technical clubs",
+    ],
+  },
 ];
 
 // ============================================
@@ -143,62 +145,68 @@ export const PROJECTS = [
     id: 1,
     name: "Gram Panchayat Services Website",
     tagline: "Digital India Initiative",
-    description: "Developed a live, fully responsive website providing Panchayat services as part of a Digital India initiative. Integrated a RAG-based AI chatbot answering user queries using real-time data. Added regional language support to make the platform more accessible to rural users.",
-    longDescription: "A comprehensive platform for rural governance digitization, featuring real-time service delivery, multilingual support, and an intelligent AI assistant powered by RAG technology. The system handles user queries efficiently and provides accurate information based on government data.",
+    description:
+      "Developed a live, fully responsive website providing Panchayat services as part of a Digital India initiative. Integrated a RAG-based AI chatbot answering user queries using real-time data. Added regional language support to make the platform more accessible to rural users.",
+    longDescription:
+      "A comprehensive platform for rural governance digitization, featuring real-time service delivery, multilingual support, and an intelligent AI assistant powered by RAG technology. The system handles user queries efficiently and provides accurate information based on government data.",
     techStack: ["React.js", "Firebase", "Tailwind CSS", "RAG AI", "NLP"],
     features: [
       "RAG-based AI chatbot for instant query resolution",
       "Regional language support (Hindi, Marathi)",
       "Real-time service updates",
       "Secure Firebase deployment",
-      "Responsive design for all devices"
+      "Responsive design for all devices",
     ],
     image: "/projects/gram-panchayat.jpg",
-    liveDemo: "#",
-    repository: "#",
+    liveDemo: "https://grampanchayat-9e014.web.app/",
+    repository: "https://github.com/AtharvaSarada/grampanchayat",
     category: "Full-Stack",
-    year: "2024"
+    year: "2024",
   },
   {
     id: 2,
     name: "DripNest – E-commerce Platform",
     tagline: "Modern Shopping Experience",
-    description: "Full-stack e-commerce platform with seller dashboard for product CRUD operations. Real-time product updates with MongoDB + REST APIs. Modern, responsive UI for smooth shopping experience.",
-    longDescription: "A complete e-commerce solution featuring a customer-facing storefront and a comprehensive seller dashboard. Built with modern web technologies to ensure scalability, performance, and an exceptional user experience.",
+    description:
+      "Full-stack e-commerce platform with seller dashboard for product CRUD operations. Real-time product updates with MongoDB + REST APIs. Modern, responsive UI for smooth shopping experience.",
+    longDescription:
+      "A complete e-commerce solution featuring a customer-facing storefront and a comprehensive seller dashboard. Built with modern web technologies to ensure scalability, performance, and an exceptional user experience.",
     techStack: ["HTML", "CSS", "Bootstrap", "JavaScript", "Node.js", "MongoDB"],
     features: [
       "Seller dashboard with CRUD operations",
       "Real-time inventory management",
       "Shopping cart and checkout system",
       "Product search and filtering",
-      "Order tracking system"
+      "Order tracking system",
     ],
     image: "/projects/dripnest.jpg",
-    liveDemo: "#",
-    repository: "#",
+    liveDemo: "https://dripnest-eight.vercel.app/",
+    repository: "https://github.com/AtharvaSarada/dripdeploy",
     category: "E-commerce",
-    year: "2023"
+    year: "2023",
   },
   {
     id: 3,
     name: "AI Customer Support Chatbot",
     tagline: "Intelligent Assistance",
-    description: "Built an AI chatbot using NLTK and TensorFlow for accurate, context-aware intent classification. Developed a responsive chat interface with real-time messaging and typing indicators. Integrated SQLite with basic usage alerts.",
-    longDescription: "An intelligent customer support solution powered by machine learning. The chatbot understands user intent, provides contextual responses, and learns from interactions to improve accuracy over time.",
+    description:
+      "Built an AI chatbot using NLTK and TensorFlow for accurate, context-aware intent classification. Developed a responsive chat interface with real-time messaging and typing indicators. Integrated SQLite with basic usage alerts.",
+    longDescription:
+      "An intelligent customer support solution powered by machine learning. The chatbot understands user intent, provides contextual responses, and learns from interactions to improve accuracy over time.",
     techStack: ["Python", "TensorFlow", "Flask", "NLTK", "SQLite"],
     features: [
       "NLP-powered intent classification",
       "Context-aware responses",
       "Real-time messaging interface",
       "Typing indicators",
-      "Usage analytics and alerts"
+      "Usage analytics and alerts",
     ],
     image: "/projects/chatbot.jpg",
     liveDemo: null,
-    repository: "#",
+    repository: "https://github.com/AtharvaSarada/chatbot",
     category: "AI/ML",
-    year: "2023"
-  }
+    year: "2023",
+  },
 ];
 
 // ============================================
@@ -212,9 +220,11 @@ export const CERTIFICATIONS = [
     issuer: "Dr. Angela Yu",
     platform: "Udemy",
     date: "2023",
-    description: "Comprehensive full-stack development course covering HTML, CSS, JavaScript, Node.js, React, and databases.",
+    description:
+      "Comprehensive full-stack development course covering HTML, CSS, JavaScript, Node.js, React, and databases.",
     skills: ["HTML/CSS", "JavaScript", "React", "Node.js", "MongoDB"],
-    credentialUrl: "#"
+    credentialUrl:
+      "https://www.udemy.com/course/the-complete-web-development-bootcamp/",
   },
   {
     id: 2,
@@ -222,9 +232,10 @@ export const CERTIFICATIONS = [
     issuer: "Haris Ali Khan",
     platform: "Udemy",
     date: "2024",
-    description: "Advanced web development techniques including modern frameworks and best practices.",
+    description:
+      "Advanced web development techniques including modern frameworks and best practices.",
     skills: ["Web Development", "Modern Frameworks", "Best Practices"],
-    credentialUrl: "#"
+    credentialUrl: "course-url",
   },
   {
     id: 3,
@@ -232,9 +243,11 @@ export const CERTIFICATIONS = [
     issuer: "Zaid Sabih (z-Security)",
     platform: "Udemy",
     date: "2023",
-    description: "Comprehensive ethical hacking and cybersecurity fundamentals course.",
+    description:
+      "Comprehensive ethical hacking and cybersecurity fundamentals course.",
     skills: ["Cybersecurity", "Penetration Testing", "Network Security"],
-    credentialUrl: "#"
+    credentialUrl:
+      "https://www.udemy.com/course/learn-ethical-hacking-from-scratch/",
   },
   {
     id: 4,
@@ -242,10 +255,12 @@ export const CERTIFICATIONS = [
     issuer: "Outskill",
     platform: "Outskill",
     date: "2024",
-    description: "In-depth exploration of generative AI technologies, LLMs, and practical applications.",
+    description:
+      "In-depth exploration of generative AI technologies, LLMs, and practical applications.",
     skills: ["Generative AI", "LLMs", "Prompt Engineering", "AI Applications"],
-    credentialUrl: "#"
-  }
+    credentialUrl:
+      "https://www.linkedin.com/posts/atharva-sarada-ak47_aistrategy-futureofwork-digitaltransformation-activity-7370871795429740545-5wlJ?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADlAP6cBDofUrxG9Vep4QA9A6viVAnkKebU",
+  },
 ];
 
 // ============================================
@@ -255,7 +270,7 @@ export const CERTIFICATIONS = [
 export const LANGUAGES = [
   { name: "English", level: "Fluent", proficiency: 95 },
   { name: "Hindi", level: "Native", proficiency: 100 },
-  { name: "Marathi", level: "Native", proficiency: 100 }
+  { name: "Marathi", level: "Native", proficiency: 100 },
 ];
 
 // ============================================
@@ -267,22 +282,22 @@ export const ANIMATION_TIMINGS = {
   fast: 0.3,
   normal: 0.6,
   slow: 1.2,
-  verySlow: 2.0
+  verySlow: 2.0,
 };
 
 export const EASING_FUNCTIONS = {
-  easeOut: 'cubic-bezier(0.16, 1, 0.3, 1)',
-  easeIn: 'cubic-bezier(0.7, 0, 0.84, 0)',
-  easeInOut: 'cubic-bezier(0.87, 0, 0.13, 1)',
-  spring: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-  smooth: 'cubic-bezier(0.4, 0, 0.2, 1)'
+  easeOut: "cubic-bezier(0.16, 1, 0.3, 1)",
+  easeIn: "cubic-bezier(0.7, 0, 0.84, 0)",
+  easeInOut: "cubic-bezier(0.87, 0, 0.13, 1)",
+  spring: "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+  smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
 };
 
 export const STAGGER_DELAYS = {
   list: 0.1,
   grid: 0.15,
   letters: 0.05,
-  sections: 0.2
+  sections: 0.2,
 };
 
 // ============================================
@@ -291,7 +306,7 @@ export const STAGGER_DELAYS = {
 
 export const OBSERVER_OPTIONS = {
   threshold: 0.2,
-  rootMargin: '-50px'
+  rootMargin: "-50px",
 };
 
 // ============================================
@@ -299,13 +314,13 @@ export const OBSERVER_OPTIONS = {
 // ============================================
 
 export const NAV_LINKS = [
-  { id: 'hero', label: 'Home', href: '#hero' },
-  { id: 'about', label: 'About', href: '#about' },
-  { id: 'skills', label: 'Skills', href: '#skills' },
-  { id: 'education', label: 'Education', href: '#education' },
-  { id: 'projects', label: 'Projects', href: '#projects' },
-  { id: 'certifications', label: 'Certifications', href: '#certifications' },
-  { id: 'contact', label: 'Contact', href: '#contact' }
+  { id: "hero", label: "Home", href: "#hero" },
+  { id: "about", label: "About", href: "#about" },
+  { id: "skills", label: "Skills", href: "#skills" },
+  { id: "education", label: "Education", href: "#education" },
+  { id: "projects", label: "Projects", href: "#projects" },
+  { id: "certifications", label: "Certifications", href: "#certifications" },
+  { id: "contact", label: "Contact", href: "#contact" },
 ];
 
 // ============================================
@@ -315,32 +330,32 @@ export const NAV_LINKS = [
 export const SOCIAL_LINKS = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/atharva-sarada",
-    icon: "linkedin"
+    url: "https://www.linkedin.com/in/atharva-sarada-ak47/",
+    icon: "linkedin",
   },
   {
     name: "GitHub",
-    url: "https://github.com/atharva-sarada",
-    icon: "github"
+    url: "https://github.com/AtharvaSarada",
+    icon: "github",
   },
   {
     name: "Email",
-    url: "mailto:atharva.sarada@example.com",
-    icon: "mail"
-  }
+    url: "mailto:your.email@example.com",
+    icon: "mail",
+  },
 ];
 
 // ============================================
 // COLOR CONSTANTS
 // ============================================
 
-export const AURORA_COLORS = ['#667eea', '#764ba2', '#f093fb', '#4facfe'];
+export const AURORA_COLORS = ["#667eea", "#764ba2", "#f093fb", "#4facfe"];
 
 export const SKILL_CATEGORY_COLORS = {
   "Programming Languages": "#667eea",
   "Frontend Technologies": "#f093fb",
   "Backend Technologies": "#764ba2",
-  "Databases": "#4facfe",
+  Databases: "#4facfe",
   "AI & Machine Learning": "#00d4ff",
-  "Cloud & DevOps": "#667eea"
+  "Cloud & DevOps": "#667eea",
 };
