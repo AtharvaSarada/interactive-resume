@@ -25,6 +25,7 @@ import {
   EMAILJS_CONFIG,
   EMAIL_TEMPLATE_PARAMS,
 } from "../config/emailjs.config";
+import SpotlightCard from "./SpotlightCard";
 
 // ============================================
 // EDUCATION COMPONENT
@@ -183,80 +184,86 @@ export const Projects = () => {
           {PROJECTS.map((project, index) => (
             <motion.div
               key={project.id}
-              className="glass rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 cursor-pointer"
               initial={{ opacity: 0, y: 50 }}
               animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              onClick={() => setSelectedProject(project)}
-              whileHover={{ y: -10 }}
             >
-              {/* Project Image Placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary via-secondary to-accent relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-6xl">
-                  {project.category === "AI/ML"
-                    ? "🤖"
-                    : project.category === "E-commerce"
-                      ? "🛒"
-                      : "🌐"}
-                </div>
-                <div className="absolute top-3 right-3 px-3 py-1 bg-black/50 backdrop-blur-sm rounded-full text-xs text-white">
-                  {project.year}
-                </div>
-              </div>
+              <SpotlightCard
+                className="glass rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 cursor-pointer"
+                isSpecial={project.name === "Gram Panchayat Services Website"}
+              >
+                <div onClick={() => setSelectedProject(project)}>
+                  {/* Project Image Placeholder */}
+                  <div className="h-48 bg-gradient-to-br from-primary via-secondary to-accent relative overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center text-6xl">
+                      {project.category === "AI/ML"
+                        ? "🤖"
+                        : project.category === "E-commerce"
+                          ? "🛒"
+                          : "🌐"}
+                    </div>
+                    <div className="absolute top-3 right-3 px-3 py-1 bg-black/50 backdrop-blur-sm rounded-full text-xs text-white">
+                      {project.year}
+                    </div>
+                  </div>
 
-              {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 dark:text-white light:text-gray-900">
-                  {project.name}
-                </h3>
-                <p className="text-sm text-accent mb-3">{project.tagline}</p>
-                <p className="text-sm dark:text-gray-400 light:text-gray-600 mb-4 line-clamp-3">
-                  {project.description}
-                </p>
+                  {/* Project Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2 dark:text-white light:text-gray-900">
+                      {project.name}
+                    </h3>
+                    <p className="text-sm text-accent mb-3">
+                      {project.tagline}
+                    </p>
+                    <p className="text-sm dark:text-gray-400 light:text-gray-600 mb-4 line-clamp-3">
+                      {project.description}
+                    </p>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.techStack.slice(0, 3).map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 py-1 text-xs bg-white/10 rounded-md dark:text-gray-300 light:text-gray-700"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.techStack.length > 3 && (
-                    <span className="px-2 py-1 text-xs bg-white/10 rounded-md dark:text-gray-300 light:text-gray-700">
-                      +{project.techStack.length - 3} more
-                    </span>
-                  )}
-                </div>
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.techStack.slice(0, 3).map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-1 text-xs bg-white/10 rounded-md dark:text-gray-300 light:text-gray-700"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.techStack.length > 3 && (
+                        <span className="px-2 py-1 text-xs bg-white/10 rounded-md dark:text-gray-300 light:text-gray-700">
+                          +{project.techStack.length - 3} more
+                        </span>
+                      )}
+                    </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  {project.liveDemo && (
-                    <a
-                      href={project.liveDemo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white text-sm font-semibold rounded-lg text-center hover:shadow-lg transition-shadow"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Live Demo
-                    </a>
-                  )}
-                  {project.repository && (
-                    <a
-                      href={project.repository}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 px-4 py-2 glass text-sm font-semibold rounded-lg text-center hover:bg-white/20 transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Code
-                    </a>
-                  )}
+                    {/* Action Buttons */}
+                    <div className="flex gap-2">
+                      {project.liveDemo && (
+                        <a
+                          href={project.liveDemo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white text-sm font-semibold rounded-lg text-center hover:shadow-lg transition-shadow"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Live Demo
+                        </a>
+                      )}
+                      {project.repository && (
+                        <a
+                          href={project.repository}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 px-4 py-2 glass text-sm font-semibold rounded-lg text-center hover:bg-white/20 transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Code
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
