@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, Download, Mail } from "lucide-react";
+import { ChevronDown, Mail } from "lucide-react";
 import Aurora from "../animations/Aurora";
 import SplitText from "../animations/SplitText";
 import RotatingText from "../animations/RotatingText";
@@ -21,17 +21,6 @@ const Hero = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-  };
-
-  const handleDownloadResume = () => {
-    // Create a download link for the resume
-    const link = document.createElement("a");
-    link.href = "/resume/Atharva (7).pdf";
-    link.download = "Atharva_Sarada_Resume.pdf";
-    link.target = "_blank"; // Open in new tab as fallback
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   return (
@@ -98,33 +87,15 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex justify-center items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.6, duration: 0.8 }}
         >
-          {/* Download Resume Button */}
-          <motion.button
-            onClick={handleDownloadResume}
-            className="group relative px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 overflow-hidden"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {/* Shimmer Effect */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: "100%" }}
-              transition={{ duration: 0.6 }}
-            />
-            <Download className="w-5 h-5" />
-            <span>Download Resume</span>
-          </motion.button>
-
           {/* Contact Me Button */}
           <motion.button
             onClick={() => scrollToSection("contact")}
-            className="group relative px-8 py-4 glass border-2 border-white/20 text-white rounded-lg font-semibold text-lg hover:border-accent transition-all duration-300 flex items-center gap-2"
+            className="group relative px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
