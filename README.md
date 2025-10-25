@@ -23,7 +23,7 @@ A stunning, professional, highly interactive single-page resume website built wi
 4. **Education Timeline** - Vertical timeline with alternating card layout
 5. **Projects Showcase** - Grid layout with detailed modal views
 6. **Certifications** - Professional credentials with skill tags
-7. **Contact Form** - Functional form with validation and Aurora background
+7. **Contact Form** - Functional form with EmailJS integration and Aurora background
 8. **Footer** - Quick links, social icons, and back-to-top button
 
 ### 🌓 Theme Support
@@ -54,6 +54,7 @@ A stunning, professional, highly interactive single-page resume website built wi
 - **Icons:** Lucide React 0.263.1
 - **Notifications:** React Hot Toast 2.4.1
 - **Utilities:** React Intersection Observer 9.5.3
+- **Email Service:** EmailJS Browser 4.x
 
 ## 📦 Installation & Setup
 
@@ -104,9 +105,11 @@ interactive-resume/
     │   ├── Education.jsx    # Education timeline
     │   ├── Projects.jsx     # Projects grid with modals
     │   ├── Certifications.jsx # Certifications display
-    │   ├── Contact.jsx      # Contact form
+    │   ├── Contact.jsx      # Contact form with EmailJS
     │   ├── Footer.jsx       # Footer with back-to-top
     │   └── index.js         # Component exports
+    ├── config/              # Configuration files
+    │   └── emailjs.config.js # EmailJS credentials
     ├── animations/          # Custom animation components
     │   ├── Aurora.jsx       # Aurora background effect
     │   ├── SplitText.jsx    # Character animation
@@ -116,6 +119,34 @@ interactive-resume/
     └── utils/               # Utility files
         └── constants.js     # Resume data and constants
 ```
+
+## 📧 Contact Form Setup (EmailJS)
+
+To enable the contact form, you need to set up EmailJS:
+
+1. **Quick Setup:**
+   - Follow the detailed guide in `EMAILJS_SETUP.md`
+   - Create a free EmailJS account at [emailjs.com](https://www.emailjs.com)
+   - Set up your email service (Gmail recommended)
+   - Create an email template
+   - Update credentials in `src/config/emailjs.config.js`
+
+2. **Configuration:**
+   ```javascript
+   // src/config/emailjs.config.js
+   export const EMAILJS_CONFIG = {
+     PUBLIC_KEY: 'your-public-key',
+     SERVICE_ID: 'your-service-id',
+     TEMPLATE_ID: 'your-template-id',
+   };
+   ```
+
+3. **Testing:**
+   - Build and deploy: `npm run deploy`
+   - Fill out the contact form on your live site
+   - Check your email for the message
+
+📖 **See `EMAILJS_SETUP.md` for complete step-by-step instructions with screenshots!**
 
 ## 🎨 Customization Guide
 
@@ -221,25 +252,18 @@ npm run build
 
 2. Deploy the `dist` folder to Netlify
 
-### GitHub Pages
+### GitHub Pages (Already Configured!)
 
-1. Install gh-pages:
+This project is already set up for GitHub Pages deployment:
+
 ```bash
-npm install --save-dev gh-pages
-```
-
-2. Add to `package.json`:
-```json
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-}
-```
-
-3. Deploy:
-```bash
+# Deploy to GitHub Pages
 npm run deploy
 ```
+
+**Live at:** `https://atharvasarada.github.io/interactive-resume/`
+
+**Note:** Make sure to set up EmailJS before deploying for full contact form functionality!
 
 ## 🎯 Performance Optimization
 
@@ -321,15 +345,18 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 🎬 Getting Started Checklist
 
 - [ ] Install dependencies (`npm install`)
+- [ ] **Set up EmailJS** (see `EMAILJS_SETUP.md`)
+- [ ] Update `src/config/emailjs.config.js` with your EmailJS credentials
 - [ ] Update personal information in constants.js
 - [ ] Add your resume PDF to public folder
 - [ ] Update social media links
 - [ ] Customize colors and theme
 - [ ] Add your projects and certifications
+- [ ] Test contact form functionality
 - [ ] Test responsiveness on mobile
 - [ ] Test accessibility features
 - [ ] Build for production (`npm run build`)
-- [ ] Deploy to hosting platform
+- [ ] Deploy to GitHub Pages (`npm run deploy`)
 
 ---
 

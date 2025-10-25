@@ -20,6 +20,11 @@ import {
 import Aurora from "../animations/Aurora";
 import CssDotGrid from "./backgrounds/CssDotGrid";
 import toast from "react-hot-toast";
+import emailjs from "@emailjs/browser";
+import {
+  EMAILJS_CONFIG,
+  EMAIL_TEMPLATE_PARAMS,
+} from "../config/emailjs.config";
 
 // ============================================
 // EDUCATION COMPONENT
@@ -434,12 +439,37 @@ export const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success("Message sent successfully!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+    try {
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: EMAIL_TEMPLATE_PARAMS.to_name,
+        reply_to: formData.email,
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY,
+      );
+
+      if (response.status === 200) {
+        toast.success("Message sent successfully! I'll get back to you soon.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      }
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error(
+        "Failed to send message. Please try again or email me directly.",
+      );
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
